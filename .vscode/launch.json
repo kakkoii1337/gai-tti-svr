@@ -2,7 +2,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python Debugger: gai-itt server",
+            "name": "Python Debugger: gai-tti server",
             "type": "debugpy",
             "request": "launch",
             "console": "integratedTerminal",
