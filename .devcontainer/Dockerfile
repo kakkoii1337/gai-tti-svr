@@ -79,4 +79,7 @@ WORKDIR ${ROOT}
 ENV NVIDIA_VISIBLE_DEVICES=all
 ENV CLI_ARGS=""
 EXPOSE 12035
-CMD python -u webui.py --listen --port 12035 ${CLI_ARGS}
+
+# Install deps for devcontainer
+RUN pip install ipykernel
+#CMD python -u webui.py --listen --port 12035 ${CLI_ARGS}

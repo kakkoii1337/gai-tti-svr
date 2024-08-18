@@ -1,0 +1,35 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Docker: build",
+            "type": "shell",
+            "command": "/bin/bash",
+            "args": [
+                "-c",
+                "cd ${workspaceFolder}/.vscode && python docker_build.py"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Docker: push",
+            "type": "shell",
+            "command": "/bin/bash",
+            "args": [
+                "-c",
+                "cd ${workspaceFolder}/.vscode && python docker_push.py"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Docker: exec",
+            "type": "shell",
+            "command": "/bin/bash",
+            "args": [
+                "-c",
+                "cd ${workspaceFolder}/.vscode && python docker_exec.py"
+            ],
+            "problemMatcher": []
+        }
+    ]
+}

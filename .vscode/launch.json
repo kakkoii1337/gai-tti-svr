@@ -1,0 +1,27 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: gai-itt server",
+            "type": "debugpy",
+            "request": "launch",
+            "console": "integratedTerminal",
+            "args": [
+                "--port",
+                "12035",
+                "--listen",
+                "--api",
+                "--xformers",
+                "--medvram",
+                "--ckpt",
+                "/stable-diffusion-webui/models/Stable-diffusion/runwayml/v1-5-pruned-emaonly.safetensors",
+                "--no-download-sd-model"
+            ],
+            "env": {
+                "PYTHONUNBUFFERED": "1"
+            },
+            "program": "/stable-diffusion-webui/webui.py",
+            "justMyCode": false,
+        }
+    ]
+}

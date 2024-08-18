@@ -1,10 +1,7 @@
-[tool.poetry]
-name = "gai-tti-svr"
-version = "0.200"
-
 [build-system]
-requires = ["poetry-core>=1.8.3"]
+requires = [ "poetry-core>=1.8.3",]
 build-backend = "poetry.core.masonry.api"
 
-
-
+[tool.poetry]
+name = "gai-tti-svr"
+version = "0.204"

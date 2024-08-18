@@ -1,0 +1,27 @@
+{
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "runArgs": [
+        "--gpus=all"
+    ],
+    "mounts": [
+        "source=${localEnv:HOME}/.gai,target=/root/.gai,type=bind,consistency=cached",
+        "source=${localEnv:HOME}/.cache,target=/root/.cache,type=bind,consistency=cached",
+        "source=${localEnv:HOME}/.gai/models/Stable-diffusion,target=/stable-diffusion-webui/models/Stable-diffusion,type=bind,consistency=cached",
+        "source=${localEnv:HOME}/.gai/models/VAE,target=/stable-diffusion-webui/models/VAE,type=bind,consistency=cached",
+    ],
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.shell.linux": "/bin/bash"
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-toolsai.jupyter"
+            ]
+        }
+    },
+    "forwardPorts": [],
+    "remoteUser": "root"
+}
