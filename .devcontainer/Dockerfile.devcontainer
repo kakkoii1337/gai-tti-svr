@@ -81,5 +81,5 @@ ENV CLI_ARGS=""
 EXPOSE 12035
 
 # Install deps for devcontainer
-RUN pip install ipykernel
+RUN pip install ipykernel gai-sdk
 #CMD python -u webui.py --listen --port 12035 ${CLI_ARGS}

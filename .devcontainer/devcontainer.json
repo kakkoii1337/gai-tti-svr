@@ -1,7 +1,9 @@
 {
-    "build": {
-        "dockerfile": "Dockerfile"
-    },
+    "name": "gai-tti-svr",
+    "image": "kakkoii1337/gai-tti-svr_devcontainer:1.0.8",
+    // "build": {
+    //     "dockerfile": "Dockerfile.devcontainer"
+    // },
     "runArgs": [
         "--gpus=all"
     ],
@@ -10,6 +12,7 @@
         "source=${localEnv:HOME}/.cache,target=/root/.cache,type=bind,consistency=cached",
         "source=${localEnv:HOME}/.gai/models/Stable-diffusion,target=/stable-diffusion-webui/models/Stable-diffusion,type=bind,consistency=cached",
         "source=${localEnv:HOME}/.gai/models/VAE,target=/stable-diffusion-webui/models/VAE,type=bind,consistency=cached",
+        "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
     ],
     "customizations": {
         "vscode": {
@@ -22,6 +25,8 @@
             ]
         }
     },
-    "forwardPorts": [],
+    "forwardPorts": [
+        12035
+    ],
     "remoteUser": "root"
 }
