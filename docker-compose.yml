@@ -1,0 +1,27 @@
+services:
+
+  gai-tti:
+      image: kakkoii1337/gai-tti-svr:1.0.9
+      container_name: gai-tti
+      environment:
+          CLI_ARGS: "--listen --api --xformers --medvram --no-download-sd-model --ckpt /stable-diffusion-webui/models/Stable-diffusion/runwayml/v1-5-pruned-emaonly.safetensors"
+      deploy:
+          resources:
+              reservations:
+                  devices:
+                      - capabilities: [gpu]
+                        driver: nvidia
+                        count: all
+      ports:
+          - "12035:12035"
+      volumes:
+          - ~/.gai/models/Stable-diffusion:/stable-diffusion-webui/models/Stable-diffusion
+          - ~/.gai/models/VAE:/stable-diffusion-webui/models/VAE
+      networks:
+        - default
+      restart: always
+      #command: sleep infinity
+
+
+
+

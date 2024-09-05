@@ -11,45 +11,65 @@
             ],
             "problemMatcher": []
         },
+        // {
+        //     "label": "Docker: build devcontainer",
+        //     "type": "shell",
+        //     "command": "/bin/bash",
+        //     "args": [
+        //         "-c",
+        //         "gai docker build ${workspaceFolder}/pyproject.toml --dockerfile-path=${workspaceFolder}/.devcontainer/Dockerfile.devcontainer --image-name=gai-tti-svr_devcontainer"
+        //     ],
+        //     "problemMatcher": []
+        // },
+        // {
+        //     "label": "Docker: push devcontainer",
+        //     "type": "shell",
+        //     "command": "/bin/bash",
+        //     "args": [
+        //         "-c",
+        //         "gai docker push ${workspaceFolder}/pyproject.toml --dockerfile-path=${workspaceFolder}/.devcontainer/Dockerfile.devcontainer --image-name=gai-tti-svr_devcontainer"
+        //     ],
+        //     "problemMatcher": []
+        // },
         {
-            "label": "Docker: build devcontainer",
+            "label": "Docker: build gai-tti-svr",
             "type": "shell",
             "command": "/bin/bash",
             "args": [
                 "-c",
-                "gai docker build ${workspaceFolder}/pyproject.toml --dockerfile-path=${workspaceFolder}/.devcontainer/Dockerfile.devcontainer --image-name=gai-tti-svr_devcontainer"
+                "gai docker build ${workspaceFolder}/pyproject.toml"
             ],
             "problemMatcher": []
         },
         {
-            "label": "Docker: push devcontainer",
+            "label": "Docker: push gai-tti-svr",
             "type": "shell",
             "command": "/bin/bash",
             "args": [
                 "-c",
-                "gai docker push ${workspaceFolder}/pyproject.toml --dockerfile-path=${workspaceFolder}/.devcontainer/Dockerfile.devcontainer --image-name=gai-tti-svr_devcontainer"
+                "gai docker push ${workspaceFolder}/pyproject.toml"
             ],
             "problemMatcher": []
         },
         {
-            "label": "Docker: push",
+            "label": "docker-compose: up",
             "type": "shell",
             "command": "/bin/bash",
             "args": [
                 "-c",
-                "cd ${workspaceFolder}/.vscode && python docker_push.py"
+                "docker compose -f ${workspaceFolder}/docker-compose.yml up"
             ],
             "problemMatcher": []
         },
         {
-            "label": "Docker: exec",
+            "label": "docker-compose: down",
             "type": "shell",
             "command": "/bin/bash",
             "args": [
                 "-c",
-                "cd ${workspaceFolder}/.vscode && python docker_exec.py"
+                "docker compose -f ${workspaceFolder}/docker-compose.yml down"
             ],
             "problemMatcher": []
-        }
+        },
     ]
 }
